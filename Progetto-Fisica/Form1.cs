@@ -32,7 +32,21 @@ namespace Progetto_Fisica
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             //e.Graphics.DrawBezier(Pens.Black, pt1, pt2, pt3, pt4);
-           
+        }
+
+        private void Input_Angle_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // enter key is pressed
+                graph_designer.instanceGraphicsElements();
+                graph_designer.drawCurve(10, Int32.Parse(Input_Angle.Text));
+            }
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
             

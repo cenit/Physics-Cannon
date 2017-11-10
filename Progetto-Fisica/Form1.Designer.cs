@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0");
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0");
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Input_Angle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.Input_Speed = new System.Windows.Forms.TextBox();
+            this.Output_Distance = new System.Windows.Forms.TextBox();
             this.Input_Time = new System.Windows.Forms.TextBox();
-            this.Input_Mass = new System.Windows.Forms.TextBox();
+            this.TextBox13 = new System.Windows.Forms.TextBox();
             this.Input_Target_X = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,15 +49,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.Input_Motion = new System.Windows.Forms.TextBox();
+            this.Output_Time = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Input_Kinetic_Energy = new System.Windows.Forms.TextBox();
-            this.Input_Potential_Energy = new System.Windows.Forms.TextBox();
+            this.Input_Speed = new System.Windows.Forms.TextBox();
+            this.Input_Mass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.Input_Bullet_X = new System.Windows.Forms.TextBox();
-            this.Input_Bullet_Y = new System.Windows.Forms.TextBox();
+            this.Output_Height = new System.Windows.Forms.TextBox();
+            this.Output_Speed = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -72,11 +73,12 @@
             // 
             // Input_Angle
             // 
-            this.Input_Angle.Location = new System.Drawing.Point(391, 3);
+            this.Input_Angle.Location = new System.Drawing.Point(390, 3);
             this.Input_Angle.Name = "Input_Angle";
             this.Input_Angle.Size = new System.Drawing.Size(126, 31);
             this.Input_Angle.TabIndex = 0;
             this.Input_Angle.Text = "60";
+            this.Input_Angle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_Angle_KeyUp);
             // 
             // label1
             // 
@@ -87,30 +89,30 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Angolo";
             // 
-            // Input_Speed
+            // Output_Distance
             // 
-            this.Input_Speed.Location = new System.Drawing.Point(1465, 77);
-            this.Input_Speed.Name = "Input_Speed";
-            this.Input_Speed.Size = new System.Drawing.Size(126, 31);
-            this.Input_Speed.TabIndex = 6;
+            this.Output_Distance.Location = new System.Drawing.Point(1461, 77);
+            this.Output_Distance.Name = "Output_Distance";
+            this.Output_Distance.Size = new System.Drawing.Size(126, 31);
+            this.Output_Distance.TabIndex = 6;
             // 
             // Input_Time
             // 
-            this.Input_Time.Location = new System.Drawing.Point(391, 77);
+            this.Input_Time.Location = new System.Drawing.Point(390, 77);
             this.Input_Time.Name = "Input_Time";
             this.Input_Time.Size = new System.Drawing.Size(126, 31);
             this.Input_Time.TabIndex = 7;
             // 
-            // Input_Mass
+            // TextBox13
             // 
-            this.Input_Mass.Location = new System.Drawing.Point(1465, 269);
-            this.Input_Mass.Name = "Input_Mass";
-            this.Input_Mass.Size = new System.Drawing.Size(126, 31);
-            this.Input_Mass.TabIndex = 8;
+            this.TextBox13.Location = new System.Drawing.Point(1461, 269);
+            this.TextBox13.Name = "TextBox13";
+            this.TextBox13.Size = new System.Drawing.Size(126, 31);
+            this.TextBox13.TabIndex = 8;
             // 
             // Input_Target_X
             // 
-            this.Input_Target_X.Location = new System.Drawing.Point(391, 147);
+            this.Input_Target_X.Location = new System.Drawing.Point(390, 147);
             this.Input_Target_X.Name = "Input_Target_X";
             this.Input_Target_X.Size = new System.Drawing.Size(126, 31);
             this.Input_Target_X.TabIndex = 9;
@@ -118,11 +120,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(987, 74);
+            this.label2.Location = new System.Drawing.Point(983, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 25);
+            this.label2.Size = new System.Drawing.Size(188, 25);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Velocità";
+            this.label2.Text = "Distanza Percorsa";
             // 
             // label3
             // 
@@ -136,11 +138,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(987, 266);
+            this.label4.Location = new System.Drawing.Point(983, 266);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 25);
+            this.label4.Size = new System.Drawing.Size(19, 25);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Massa Proiettile";
+            this.label4.Text = "-";
             // 
             // label5
             // 
@@ -153,7 +155,7 @@
             // 
             // Input_Target_Y
             // 
-            this.Input_Target_Y.Location = new System.Drawing.Point(391, 211);
+            this.Input_Target_Y.Location = new System.Drawing.Point(390, 211);
             this.Input_Target_Y.Name = "Input_Target_Y";
             this.Input_Target_Y.Size = new System.Drawing.Size(126, 31);
             this.Input_Target_Y.TabIndex = 14;
@@ -174,13 +176,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.4551F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.5449F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 467F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 471F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.Input_Angle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.Input_Speed, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Output_Distance, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Input_Motion, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Output_Time, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Input_Time, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
@@ -189,14 +191,14 @@
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.Input_Target_X, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.Input_Target_Y, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Input_Kinetic_Energy, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Input_Potential_Energy, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.Input_Speed, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.Input_Mass, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.label7, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Input_Bullet_X, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Input_Bullet_Y, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Input_Mass, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.Output_Height, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Output_Speed, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.TextBox13, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.label13, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBox12, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.label12, 0, 6);
@@ -225,87 +227,88 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(987, 0);
+            this.label11.Location = new System.Drawing.Point(983, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(169, 25);
+            this.label11.Size = new System.Drawing.Size(232, 25);
             this.label11.TabIndex = 25;
-            this.label11.Text = "Quantità di moto";
+            this.label11.Text = "Tempo Totale del moto";
             // 
-            // Input_Motion
+            // Output_Time
             // 
-            this.Input_Motion.Location = new System.Drawing.Point(1465, 3);
-            this.Input_Motion.Name = "Input_Motion";
-            this.Input_Motion.Size = new System.Drawing.Size(126, 31);
-            this.Input_Motion.TabIndex = 26;
+            this.Output_Time.Location = new System.Drawing.Point(1461, 3);
+            this.Output_Time.Name = "Output_Time";
+            this.Output_Time.Size = new System.Drawing.Size(126, 31);
+            this.Output_Time.TabIndex = 26;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 266);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(260, 25);
+            this.label9.Size = new System.Drawing.Size(89, 25);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Energia Cinetica Proiettile";
+            this.label9.Text = "Velocità";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(3, 332);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(289, 25);
+            this.label10.Size = new System.Drawing.Size(166, 25);
             this.label10.TabIndex = 22;
-            this.label10.Text = "Energia Potenziale Protiettile";
+            this.label10.Text = "Massa Proiettile";
             // 
-            // Input_Kinetic_Energy
+            // Input_Speed
             // 
-            this.Input_Kinetic_Energy.Location = new System.Drawing.Point(391, 269);
-            this.Input_Kinetic_Energy.Name = "Input_Kinetic_Energy";
-            this.Input_Kinetic_Energy.Size = new System.Drawing.Size(126, 31);
-            this.Input_Kinetic_Energy.TabIndex = 23;
+            this.Input_Speed.Location = new System.Drawing.Point(390, 269);
+            this.Input_Speed.Name = "Input_Speed";
+            this.Input_Speed.Size = new System.Drawing.Size(126, 31);
+            this.Input_Speed.TabIndex = 23;
             // 
-            // Input_Potential_Energy
+            // Input_Mass
             // 
-            this.Input_Potential_Energy.Location = new System.Drawing.Point(391, 335);
-            this.Input_Potential_Energy.Name = "Input_Potential_Energy";
-            this.Input_Potential_Energy.Size = new System.Drawing.Size(126, 31);
-            this.Input_Potential_Energy.TabIndex = 24;
+            this.Input_Mass.Location = new System.Drawing.Point(390, 335);
+            this.Input_Mass.Name = "Input_Mass";
+            this.Input_Mass.Size = new System.Drawing.Size(126, 31);
+            this.Input_Mass.TabIndex = 24;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(987, 144);
+            this.label7.Location = new System.Drawing.Point(983, 144);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(214, 25);
+            this.label7.Size = new System.Drawing.Size(279, 25);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Posizione X proiettile";
+            this.label7.Text = "Altezza Massima Raggiunta";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(987, 208);
+            this.label8.Location = new System.Drawing.Point(983, 208);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(223, 25);
+            this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 18;
-            this.label8.Text = "Posizione Y Protiettile";
+            this.label8.Text = "Velocità finale";
             // 
-            // Input_Bullet_X
+            // Output_Height
             // 
-            this.Input_Bullet_X.Location = new System.Drawing.Point(1465, 147);
-            this.Input_Bullet_X.Name = "Input_Bullet_X";
-            this.Input_Bullet_X.Size = new System.Drawing.Size(126, 31);
-            this.Input_Bullet_X.TabIndex = 17;
+            this.Output_Height.Location = new System.Drawing.Point(1461, 147);
+            this.Output_Height.Name = "Output_Height";
+            this.Output_Height.Size = new System.Drawing.Size(126, 31);
+            this.Output_Height.TabIndex = 17;
             // 
-            // Input_Bullet_Y
+            // Output_Speed
             // 
-            this.Input_Bullet_Y.Location = new System.Drawing.Point(1465, 211);
-            this.Input_Bullet_Y.Name = "Input_Bullet_Y";
-            this.Input_Bullet_Y.Size = new System.Drawing.Size(126, 31);
-            this.Input_Bullet_Y.TabIndex = 19;
+            this.Output_Speed.Location = new System.Drawing.Point(1461, 211);
+            this.Output_Speed.Name = "Output_Speed";
+            this.Output_Speed.Size = new System.Drawing.Size(126, 31);
+            this.Output_Speed.TabIndex = 19;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(987, 332);
+            this.label13.Location = new System.Drawing.Point(983, 332);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(26, 25);
             this.label13.TabIndex = 28;
@@ -313,7 +316,7 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(1465, 335);
+            this.textBox12.Location = new System.Drawing.Point(1461, 335);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(126, 31);
             this.textBox12.TabIndex = 29;
@@ -329,14 +332,14 @@
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(391, 411);
+            this.textBox14.Location = new System.Drawing.Point(390, 411);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(126, 31);
             this.textBox14.TabIndex = 31;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(2127, 323);
+            this.button1.Location = new System.Drawing.Point(1657, 284);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 62);
             this.button1.TabIndex = 17;
@@ -346,7 +349,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(2127, 486);
+            this.button2.Location = new System.Drawing.Point(1657, 453);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(183, 62);
             this.button2.TabIndex = 18;
@@ -355,36 +358,41 @@
             // 
             // Graph
             // 
-            chartArea2.Name = "ChartArea1";
-            this.Graph.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.Graph.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.Graph.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Graph.Legends.Add(legend1);
             this.Graph.Location = new System.Drawing.Point(3, -1);
             this.Graph.Name = "Graph";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
+            series1.Legend = "Legend1";
+            series1.Name = "Series_Cannon";
+            series1.Points.Add(dataPoint1);
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.YValuesPerPoint = 2;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Series_Curve";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
+            series3.Legend = "Legend1";
+            series3.Name = "Series_Target";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.YValuesPerPoint = 2;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
             series4.Legend = "Legend1";
-            series4.Name = "Series_Cannon";
-            series4.Points.Add(dataPoint2);
-            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series4.YValuesPerPoint = 2;
-            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Legend = "Legend1";
-            series5.Name = "Series_Curve";
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
-            series6.Legend = "Legend1";
-            series6.Name = "Series_Target";
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series6.YValuesPerPoint = 2;
-            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series4.Name = "Series_Set_Axis_Scale";
+            this.Graph.Series.Add(series1);
+            this.Graph.Series.Add(series2);
+            this.Graph.Series.Add(series3);
             this.Graph.Series.Add(series4);
-            this.Graph.Series.Add(series5);
-            this.Graph.Series.Add(series6);
             this.Graph.Size = new System.Drawing.Size(1930, 766);
             this.Graph.TabIndex = 4;
             this.Graph.Text = "chart1";
@@ -393,6 +401,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.Graph);
             this.panel1.Location = new System.Drawing.Point(53, 32);
             this.panel1.Name = "panel1";
@@ -405,8 +415,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2474, 1743);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -426,9 +434,9 @@
 
         private System.Windows.Forms.TextBox Input_Angle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Input_Speed;
+        private System.Windows.Forms.TextBox Output_Distance;
         private System.Windows.Forms.TextBox Input_Time;
-        private System.Windows.Forms.TextBox Input_Mass;
+        private System.Windows.Forms.TextBox TextBox13;
         private System.Windows.Forms.TextBox Input_Target_X;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -440,16 +448,16 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox Input_Bullet_Y;
+        private System.Windows.Forms.TextBox Output_Speed;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox Input_Bullet_X;
+        private System.Windows.Forms.TextBox Output_Height;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox Input_Kinetic_Energy;
-        private System.Windows.Forms.TextBox Input_Potential_Energy;
+        private System.Windows.Forms.TextBox Input_Speed;
+        private System.Windows.Forms.TextBox Input_Mass;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox Input_Motion;
+        private System.Windows.Forms.TextBox Output_Time;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox14;
