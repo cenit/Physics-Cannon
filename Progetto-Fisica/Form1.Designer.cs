@@ -61,11 +61,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.Input_Time_Rise = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Graph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Input_Time_Fall = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Graph)).BeginInit();
             this.panel1.SuspendLayout();
@@ -73,46 +75,44 @@
             // 
             // Input_Angle
             // 
-            this.Input_Angle.Location = new System.Drawing.Point(390, 3);
+            this.Input_Angle.Location = new System.Drawing.Point(389, 3);
             this.Input_Angle.Name = "Input_Angle";
             this.Input_Angle.Size = new System.Drawing.Size(126, 31);
             this.Input_Angle.TabIndex = 0;
-            this.Input_Angle.Text = "60";
-            this.Input_Angle.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Input_Angle_KeyUp);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 25);
+            this.label1.Size = new System.Drawing.Size(170, 25);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Angolo";
+            this.label1.Text = "Angolo (in gradi)";
             // 
             // Output_Distance
             // 
-            this.Output_Distance.Location = new System.Drawing.Point(1461, 77);
+            this.Output_Distance.Location = new System.Drawing.Point(1460, 77);
             this.Output_Distance.Name = "Output_Distance";
             this.Output_Distance.Size = new System.Drawing.Size(126, 31);
             this.Output_Distance.TabIndex = 6;
             // 
             // Input_Time
             // 
-            this.Input_Time.Location = new System.Drawing.Point(390, 77);
+            this.Input_Time.Location = new System.Drawing.Point(389, 77);
             this.Input_Time.Name = "Input_Time";
             this.Input_Time.Size = new System.Drawing.Size(126, 31);
             this.Input_Time.TabIndex = 7;
             // 
             // TextBox13
             // 
-            this.TextBox13.Location = new System.Drawing.Point(1461, 269);
+            this.TextBox13.Location = new System.Drawing.Point(1460, 269);
             this.TextBox13.Name = "TextBox13";
             this.TextBox13.Size = new System.Drawing.Size(126, 31);
             this.TextBox13.TabIndex = 8;
             // 
             // Input_Target_X
             // 
-            this.Input_Target_X.Location = new System.Drawing.Point(390, 147);
+            this.Input_Target_X.Location = new System.Drawing.Point(389, 147);
             this.Input_Target_X.Name = "Input_Target_X";
             this.Input_Target_X.Size = new System.Drawing.Size(126, 31);
             this.Input_Target_X.TabIndex = 9;
@@ -120,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(983, 74);
+            this.label2.Location = new System.Drawing.Point(982, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 25);
             this.label2.TabIndex = 10;
@@ -131,14 +131,14 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 25);
+            this.label3.Size = new System.Drawing.Size(196, 25);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Tempo";
+            this.label3.Text = "Tempo (in secondi)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(983, 266);
+            this.label4.Location = new System.Drawing.Point(982, 266);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 25);
             this.label4.TabIndex = 12;
@@ -149,13 +149,13 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(3, 144);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(190, 25);
+            this.label5.Size = new System.Drawing.Size(257, 25);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Distanza bersaglio";
+            this.label5.Text = "Distanza bersaglio (metri)";
             // 
             // Input_Target_Y
             // 
-            this.Input_Target_Y.Location = new System.Drawing.Point(390, 211);
+            this.Input_Target_Y.Location = new System.Drawing.Point(389, 211);
             this.Input_Target_Y.Name = "Input_Target_Y";
             this.Input_Target_Y.Size = new System.Drawing.Size(126, 31);
             this.Input_Target_Y.TabIndex = 14;
@@ -165,9 +165,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(3, 208);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(177, 25);
+            this.label6.Size = new System.Drawing.Size(244, 25);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Altezza bersaglio";
+            this.label6.Text = "Altezza bersaglio (metri)";
             // 
             // tableLayoutPanel1
             // 
@@ -176,7 +176,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.4551F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.5449F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 471F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 472F));
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.Input_Angle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
@@ -202,7 +203,8 @@
             this.tableLayoutPanel1.Controls.Add(this.label13, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBox12, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.label12, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox14, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.Input_Time_Rise, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.Input_Time_Fall, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 1008);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -227,7 +229,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(983, 0);
+            this.label11.Location = new System.Drawing.Point(982, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(232, 25);
             this.label11.TabIndex = 25;
@@ -235,7 +237,7 @@
             // 
             // Output_Time
             // 
-            this.Output_Time.Location = new System.Drawing.Point(1461, 3);
+            this.Output_Time.Location = new System.Drawing.Point(1460, 3);
             this.Output_Time.Name = "Output_Time";
             this.Output_Time.Size = new System.Drawing.Size(126, 31);
             this.Output_Time.TabIndex = 26;
@@ -245,30 +247,29 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 266);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 25);
+            this.label9.Size = new System.Drawing.Size(143, 25);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Velocità";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.label9.Text = "Velocità (m/s)";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(3, 332);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(166, 25);
+            this.label10.Size = new System.Drawing.Size(232, 25);
             this.label10.TabIndex = 22;
-            this.label10.Text = "Massa Proiettile";
+            this.label10.Text = "Massa Proiettile (in kg)";
             // 
             // Input_Speed
             // 
-            this.Input_Speed.Location = new System.Drawing.Point(390, 269);
+            this.Input_Speed.Location = new System.Drawing.Point(389, 269);
             this.Input_Speed.Name = "Input_Speed";
             this.Input_Speed.Size = new System.Drawing.Size(126, 31);
             this.Input_Speed.TabIndex = 23;
             // 
             // Input_Mass
             // 
-            this.Input_Mass.Location = new System.Drawing.Point(390, 335);
+            this.Input_Mass.Location = new System.Drawing.Point(389, 335);
             this.Input_Mass.Name = "Input_Mass";
             this.Input_Mass.Size = new System.Drawing.Size(126, 31);
             this.Input_Mass.TabIndex = 24;
@@ -276,7 +277,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(983, 144);
+            this.label7.Location = new System.Drawing.Point(982, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(279, 25);
             this.label7.TabIndex = 16;
@@ -285,7 +286,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(983, 208);
+            this.label8.Location = new System.Drawing.Point(982, 208);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 18;
@@ -293,14 +294,14 @@
             // 
             // Output_Height
             // 
-            this.Output_Height.Location = new System.Drawing.Point(1461, 147);
+            this.Output_Height.Location = new System.Drawing.Point(1460, 147);
             this.Output_Height.Name = "Output_Height";
             this.Output_Height.Size = new System.Drawing.Size(126, 31);
             this.Output_Height.TabIndex = 17;
             // 
             // Output_Speed
             // 
-            this.Output_Speed.Location = new System.Drawing.Point(1461, 211);
+            this.Output_Speed.Location = new System.Drawing.Point(1460, 211);
             this.Output_Speed.Name = "Output_Speed";
             this.Output_Speed.Size = new System.Drawing.Size(126, 31);
             this.Output_Speed.TabIndex = 19;
@@ -308,7 +309,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(983, 332);
+            this.label13.Location = new System.Drawing.Point(982, 332);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(26, 25);
             this.label13.TabIndex = 28;
@@ -316,7 +317,7 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(1461, 335);
+            this.textBox12.Location = new System.Drawing.Point(1460, 335);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(126, 31);
             this.textBox12.TabIndex = 29;
@@ -326,16 +327,16 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 408);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(26, 25);
+            this.label12.Size = new System.Drawing.Size(144, 25);
             this.label12.TabIndex = 27;
-            this.label12.Text = "--";
+            this.label12.Text = "Tempo_Salita";
             // 
-            // textBox14
+            // Input_Time_Rise
             // 
-            this.textBox14.Location = new System.Drawing.Point(390, 411);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(126, 31);
-            this.textBox14.TabIndex = 31;
+            this.Input_Time_Rise.Location = new System.Drawing.Point(389, 411);
+            this.Input_Time_Rise.Name = "Input_Time_Rise";
+            this.Input_Time_Rise.Size = new System.Drawing.Size(126, 31);
+            this.Input_Time_Rise.TabIndex = 31;
             // 
             // button1
             // 
@@ -408,7 +409,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1930, 770);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 470);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(167, 25);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Tempo_Discesa";
+            // 
+            // Input_Time_Fall
+            // 
+            this.Input_Time_Fall.Location = new System.Drawing.Point(389, 473);
+            this.Input_Time_Fall.Name = "Input_Time_Fall";
+            this.Input_Time_Fall.Size = new System.Drawing.Size(126, 31);
+            this.Input_Time_Fall.TabIndex = 33;
             // 
             // Form1
             // 
@@ -460,9 +476,11 @@
         private System.Windows.Forms.TextBox Output_Time;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox Input_Time_Rise;
         private System.Windows.Forms.DataVisualization.Charting.Chart Graph;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox Input_Time_Fall;
     }
 }
 

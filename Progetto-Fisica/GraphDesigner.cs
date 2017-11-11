@@ -10,14 +10,21 @@ namespace Progetto_Fisica
 {
     class GraphDesigner
     {
+        /********************************************************************
+         * PROPERTIES
+        ********************************************************************/
         Chart Graph;
         // parallels arrays for direct access to points
-        double[] curve_map_x = new double[Utilities.GRAPH_ELEMENTS_NUMBER];
-        double[] curve_map_y = new double[Utilities.GRAPH_ELEMENTS_NUMBER];
+        public double[] curve_map_x = new double[Utilities.GRAPH_ELEMENTS_NUMBER];
+        public double[] curve_map_y = new double[Utilities.GRAPH_ELEMENTS_NUMBER];
 
+        /********************************************************************
+        * METHODS
+        ********************************************************************/
         // set axis scale
         public void setAxisScale(double scale_x, double scale_y)
         {
+            Graph.Series["Series_Set_Axis_Scale"].Points.Clear();
             Graph.Series["Series_Set_Axis_Scale"].Points.AddXY(scale_x, scale_y);
         }
 
@@ -33,14 +40,14 @@ namespace Progetto_Fisica
             // draw target
             Graph.Series["Series_Target"].Points.AddXY(3, 3);
             // set axis scale
-            setAxisScale(Utilities.GRAPH_AXIS_SCALE_X, Utilities.GRAPH_AXIS_SCALE_Y);
+            //setAxisScale(Utilities.GRAPH_AXIS_SCALE_X, Utilities.GRAPH_AXIS_SCALE_Y);
             // style of graph's series
             Graph.Series["Series_Cannon"].Color = Color.LightSkyBlue;
             Graph.Series["Series_Curve"].Color = Color.LightSkyBlue;
             Graph.Series["Series_Target"].Color = Color.Orange;
             Graph.Series["Series_Curve"].BorderWidth=2;
             Graph.Series["Series_Curve"].BorderDashStyle = ChartDashStyle.Dash;
-            
+
             Graph.Series["Series_Set_Axis_Scale"].IsVisibleInLegend = false;
             // other settings
             Graph.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
@@ -62,14 +69,14 @@ namespace Progetto_Fisica
         }
 
         // draw Cannon Trajectory on graph
-        public void drawCurve(int speed, int angle)
+        public void drawCurve(double angle, double time, double target_distance, double target_height, double speed, double mass)
         {
             // calculate the increment
-            double increment = 0.1;
+            double increment = Utilities.GRAPH_CURVE_INCREMENT;
             double y = 0; double x = 0; int index = 0;
             while ((y>=0)&&(index<Utilities.GRAPH_ELEMENTS_NUMBER))
             {
-                // calculate y position of bullet 
+                // calculate y position of bullet
                 y = Utilities.bullet_trajectory_y(speed, x, angle);
                 if(y>=0)
                     // draw the point into the graph
@@ -83,8 +90,11 @@ namespace Progetto_Fisica
                 index++;
             }
 
-            // add plus points for draw line to reach zero value in y axis
-            if(index < Utilities.GRAPH_ELEMENTS_NUMBER)
+            /*
+             * TODO:
+             * add plus points for draw line to reach zero value in y axis
+             */
+            if (index < Utilities.GRAPH_ELEMENTS_NUMBER)
             {
 
             }
