@@ -15,8 +15,6 @@ namespace Progetto_Fisica
         ********************************************************************/
         // graph constant
         public static int   GRAPH_ELEMENTS_NUMBER = 500;
-        public static double GRAPH_AXIS_SCALE_X = 9;
-        public static double GRAPH_AXIS_SCALE_Y = 9;
         public static double GRAPH_CURVE_INCREMENT = 1;
         // generic constant
         public static int     number_round_decimal = 4;

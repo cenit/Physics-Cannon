@@ -67,15 +67,15 @@ namespace Progetto_Fisica
         {
             try
             {
-                Input_Angle.Text        =   Math.Round(angle, 3).ToString();
-                Input_Mass.Text         =   Math.Round(mass, 3).ToString();
-                Input_Speed.Text        =   Math.Round(speed, 3).ToString();
-                Input_Target_X.Text     =   Math.Round(target_distance, 3).ToString();
-                Input_Target_Y.Text     =   Math.Round(target_height, 3).ToString();
-                Input_Time.Text         =   Math.Round(time_flight, 3).ToString();
-                Input_Time_Rise.Text    =   Math.Round(time_rise, 3).ToString();
-                Input_Time_Fall.Text    =   Math.Round(time_fall, 3).ToString();
-                Output_Height.Text      =   Math.Round(max_height, 3).ToString();
+                Input_Angle.Text        =   Math.Round(angle, Utilities.number_round_decimal).ToString();
+                Input_Mass.Text         =   Math.Round(mass, Utilities.number_round_decimal).ToString();
+                Input_Speed.Text        =   Math.Round(speed, Utilities.number_round_decimal).ToString();
+                Input_Target_X.Text     =   Math.Round(target_distance, Utilities.number_round_decimal).ToString();
+                Input_Target_Y.Text     =   Math.Round(target_height, Utilities.number_round_decimal).ToString();
+                Input_Time.Text         =   Math.Round(time_flight, Utilities.number_round_decimal).ToString();
+                Input_Time_Rise.Text    =   Math.Round(time_rise, Utilities.number_round_decimal).ToString();
+                Input_Time_Fall.Text    =   Math.Round(time_fall, Utilities.number_round_decimal).ToString();
+                Output_Height.Text      =   Math.Round(max_height, Utilities.number_round_decimal).ToString();
             }
             catch (Exception ex)
             {
