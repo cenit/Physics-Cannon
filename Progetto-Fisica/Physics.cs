@@ -27,7 +27,6 @@ namespace Progetto_Fisica
         public double final_position;
         public bool   target_hit;
 
-
         /********************************************************************
         * METHODS
         ********************************************************************/
