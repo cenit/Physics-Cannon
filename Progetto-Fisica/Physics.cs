@@ -56,7 +56,7 @@ namespace Progetto_Fisica
             calculateViY();
             temporary_bullet_position_y = -1 * Utilities.g_power_acceleration / (2 * Math.Pow(vi_x, 2)) * Math.Pow(temporary_bullet_position_x, 2);
             temporary_bullet_position_y += (vi_y / vi_x) * temporary_bullet_position_x;
-            //Console.WriteLine("posizione proiettile -->  [" + bullet_position_x + ", " + bullet_position_y + "]");
+            Console.WriteLine("posizione proiettile -->  [" + temporary_bullet_position_x + ", " + temporary_bullet_position_y + "]");
             return temporary_bullet_position_y;
         }
 

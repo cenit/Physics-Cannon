@@ -67,7 +67,7 @@ namespace Progetto_Fisica
             Graph.Series["Series_Curve"].Color = Color.LightSkyBlue;
             Graph.Series["Series_Target"].Color = Color.Orange;
             Graph.Series["Series_Curve"].BorderWidth = 2;
-            Graph.Series["Series_Curve"].BorderDashStyle = ChartDashStyle.Dash;
+            //Graph.Series["Series_Curve"].BorderDashStyle = ChartDashStyle.Dash;
             Graph.Series["Series_Set_Axis_Scale"].IsVisibleInLegend = false;
             // other settings
             Graph.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
@@ -92,30 +92,52 @@ namespace Progetto_Fisica
         {
             // calculate the increment
             double increment = Utilities.GRAPH_CURVE_INCREMENT;
-            double y = 0; double x = 0; int index = 0;
+            double y = 0; int index = 0; double x = 0;
+            // calculate y position of bullet
+            y = physics_component.bullet_trajectory_current_position_y(x);
             while ((y>=0)&&(index<Utilities.GRAPH_ELEMENTS_NUMBER))
             {
-                // calculate y position of bullet
-                y = physics_component.bullet_trajectory_current_position_y(x);
+                // check if with this element the curve goes under zero
                 if(y>=0)
                     // draw the point into the graph
                     Graph.Series["Series_Curve"].Points.AddXY(x, y);
                 // add point to my double[] array
                 curve_map_x[index] = x;
                 curve_map_y[index] = y;
-                // next step for position
+                // increment position for generate next step
                 x += increment;
+                // calculate y position of bullet
+                y = physics_component.bullet_trajectory_current_position_y(x);
                 // increment arrays' index
                 index++;
             }
-
-            /*
-             * TODO:
-             * add plus points for draw line to reach zero value in y axis
-             */
-            if (index < Utilities.GRAPH_ELEMENTS_NUMBER)
+            // now i have the point which brak the while (assuming index < limit array's size)
+            // re-calculate the value of last points accepted
+            x -= increment;
+            //x -= increment;
+            // now i re-calculate the y value for this point
+            y = physics_component.bullet_trajectory_current_position_y(x);
+            // now check if i should finally design some points for adjust the curve
+            // if in the previous while program exited because index reach array's max lenght limit
+            // but y is still > 0 then i add some points to bullet's trajectory to complete the curve and reach zero
+            // (i only draw them without adding to the array)
+            if (y>=0)
             {
-
+                Console.WriteLine("disegno punti aggiuntivi");
+                increment = Utilities.GRAPH_CURVE_INCREMENT/10;
+                while (y >= 0)
+                {
+                    // increment position for generate next step
+                    x += increment;
+                    // calculate y position of bullet
+                    y = physics_component.bullet_trajectory_current_position_y(x);
+                    // check if with this element the curve goes under zero
+                    if (y >= 0)
+                        // draw the point into the graph
+                        Graph.Series["Series_Curve"].Points.AddXY(x, y);
+                }
+                   
+                
             }
         }
     }
