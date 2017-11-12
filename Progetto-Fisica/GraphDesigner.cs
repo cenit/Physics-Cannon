@@ -14,6 +14,7 @@ namespace Progetto_Fisica
          * PROPERTIES
         ********************************************************************/
         Chart Graph;
+        Physics physics_component;
         // parallels arrays for direct access to points
         public double[] curve_map_x = new double[Utilities.GRAPH_ELEMENTS_NUMBER];
         public double[] curve_map_y = new double[Utilities.GRAPH_ELEMENTS_NUMBER];
@@ -21,55 +22,73 @@ namespace Progetto_Fisica
         /********************************************************************
         * METHODS
         ********************************************************************/
-        // set axis scale
-        public void setAxisScale(double scale_x, double scale_y)
-        {
-            Graph.Series["Series_Set_Axis_Scale"].Points.Clear();
-            Graph.Series["Series_Set_Axis_Scale"].Points.AddXY(scale_x, scale_y);
-        }
-
-        // instance base graphics elements
-        public void instanceGraphicsElements()
-        {
-            // clear default graph series values
-            Graph.Series["Series_Cannon"].Points.Clear();
-            Graph.Series["Series_Curve"].Points.Clear();
-            Graph.Series["Series_Target"].Points.Clear();
-            // draw cannon
-            Graph.Series["Series_Cannon"].Points.AddXY(0, 0);
-            // draw target
-            Graph.Series["Series_Target"].Points.AddXY(3, 3);
-            // set axis scale
-            //setAxisScale(Utilities.GRAPH_AXIS_SCALE_X, Utilities.GRAPH_AXIS_SCALE_Y);
-            // style of graph's series
-            Graph.Series["Series_Cannon"].Color = Color.LightSkyBlue;
-            Graph.Series["Series_Curve"].Color = Color.LightSkyBlue;
-            Graph.Series["Series_Target"].Color = Color.Orange;
-            Graph.Series["Series_Curve"].BorderWidth=2;
-            Graph.Series["Series_Curve"].BorderDashStyle = ChartDashStyle.Dash;
-
-            Graph.Series["Series_Set_Axis_Scale"].IsVisibleInLegend = false;
-            // other settings
-            Graph.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
-        }
-
         // constructor
-        public GraphDesigner(Chart main_graph)
+        public GraphDesigner(Physics instance_physics, Chart main_graph)
         {
             // save main graph instance
-            this.Graph=main_graph;
+            this.Graph = main_graph;
+            // save Physics class instance
+            this.physics_component = instance_physics;
             // instance cannon, target and axis scale
-            instanceGraphicsElements();
+            instanceGraphicsElements(physics_component);
             // instance point array
-            for (int j=0; j< Utilities.GRAPH_ELEMENTS_NUMBER; j++)
+            for (int j = 0; j < Utilities.GRAPH_ELEMENTS_NUMBER; j++)
             {
                 curve_map_x[j] = 0;
                 curve_map_y[j] = 0;
             }
         }
 
+        // update physics class instance
+        public void updatePhysicsInstance(Physics instance_physics)
+        {
+            // save Physics class instance
+            this.physics_component = instance_physics;
+        }
+
+        // set axis scale
+        public void setAxisScale()
+        {
+            double scale_x = (int)Utilities.maxValue(curve_map_x) + 2;
+            double scale_y = (int)Utilities.maxValue(curve_map_y) + 2;
+            Graph.Series["Series_Set_Axis_Scale"].Points.Clear();
+            Graph.Series["Series_Set_Axis_Scale"].Points.AddXY(scale_x, scale_y);
+        }
+
+        // set default style
+        private void setStyle()
+        {
+            // clear default graph series values
+            Graph.Series["Series_Cannon"].Points.Clear();
+            Graph.Series["Series_Curve"].Points.Clear();
+            Graph.Series["Series_Target"].Points.Clear();
+            // style of graph's series
+            Graph.Series["Series_Cannon"].Color = Color.LightSkyBlue;
+            Graph.Series["Series_Curve"].Color = Color.LightSkyBlue;
+            Graph.Series["Series_Target"].Color = Color.Orange;
+            Graph.Series["Series_Curve"].BorderWidth = 2;
+            Graph.Series["Series_Curve"].BorderDashStyle = ChartDashStyle.Dash;
+            Graph.Series["Series_Set_Axis_Scale"].IsVisibleInLegend = false;
+            // other settings
+            Graph.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+        }
+
+        // instance base graphics elements
+        public void instanceGraphicsElements(Physics instance_physics)
+        {
+            // update physics instance
+            updatePhysicsInstance(instance_physics);
+            // set default style
+            setStyle();
+            // draw cannon
+            Graph.Series["Series_Cannon"].Points.AddXY(0, 0);
+            // draw target
+            Graph.Series["Series_Target"].Points.AddXY(physics_component.target_distance, physics_component.target_distance);
+
+        }
+
         // draw Cannon Trajectory on graph
-        public void drawCurve(double angle, double time, double target_distance, double target_height, double speed, double mass)
+        public void drawCurve()
         {
             // calculate the increment
             double increment = Utilities.GRAPH_CURVE_INCREMENT;
@@ -77,7 +96,7 @@ namespace Progetto_Fisica
             while ((y>=0)&&(index<Utilities.GRAPH_ELEMENTS_NUMBER))
             {
                 // calculate y position of bullet
-                y = Utilities.bullet_trajectory_y(speed, x, angle);
+                y = physics_component.bullet_trajectory_current_position_y(x);
                 if(y>=0)
                     // draw the point into the graph
                     Graph.Series["Series_Curve"].Points.AddXY(x, y);
