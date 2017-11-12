@@ -83,7 +83,7 @@ namespace Progetto_Fisica
             // draw cannon
             Graph.Series["Series_Cannon"].Points.AddXY(0, 0);
             // draw target
-            Graph.Series["Series_Target"].Points.AddXY(physics_component.target_distance, physics_component.target_distance);
+            Graph.Series["Series_Target"].Points.AddXY(physics_component.target_distance, physics_component.target_height);
 
         }
 
@@ -123,7 +123,6 @@ namespace Progetto_Fisica
             // (i only draw them without adding to the array)
             if (y>=0)
             {
-                Console.WriteLine("disegno punti aggiuntivi");
                 increment = Utilities.GRAPH_CURVE_INCREMENT/10;
                 while (y >= 0)
                 {

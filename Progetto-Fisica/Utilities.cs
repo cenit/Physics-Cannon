@@ -42,5 +42,20 @@ namespace Progetto_Fisica
             return max;
         }
 
+        // function for counting decimal digit of a input number
+        public static int countDecimalDigits(double argument)
+        {
+            return BitConverter.GetBytes(decimal.GetBits((decimal)argument)[3])[2];
+        }
+
+        // generate random (double) number between min and max values
+        public static double generateNumberRandom(double min_value, double max_value)
+        {
+            Random random = new Random();
+            return random.NextDouble() * (max_value - min_value) + min_value;
+        }
+
+
+
     }
 }

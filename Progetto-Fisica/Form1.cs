@@ -70,6 +70,11 @@ namespace Progetto_Fisica
                 Input_Time_Fall.Text    =   Math.Round(physics_component.time_fall, Utilities.number_round_decimal).ToString();
                 Output_Height.Text      =   Math.Round(physics_component.max_height, Utilities.number_round_decimal).ToString();
                 Output_Distance.Text    =   Math.Round(physics_component.final_position, Utilities.number_round_decimal).ToString();
+                // bullet hit the target ?
+                if (physics_component.target_hit)
+                    Output_Target_Hit.Text = "SI";
+                else
+                    Output_Target_Hit.Text = "NO";
             }
             catch (Exception ex)
             {
@@ -100,15 +105,18 @@ namespace Progetto_Fisica
                     //physics_component.calculateTime();
                     break;
                 }
-                deafult:
-                {
-                    // ...
-                }
             }
             // time flight
             physics_component.calculateTimeFlight();
             // distance covered
             physics_component.calculateFinalPosition();
+            // work with bullet and target position
+            if ((physics_component.target_distance == 1.111) && (physics_component.target_height == 5.111))
+                // no input target position inserted
+                physics_component.randomPositionForHitTarget();
+            else
+                // bullet hit the target ?
+                physics_component.hit_target();
             // update values
             writeInputComponent();
         }
@@ -117,14 +125,14 @@ namespace Progetto_Fisica
         {
             // read data from Input TextBox
             readInputComponent();
-            // draw base graphics elements on chart
-            graph_designer.instanceGraphicsElements(physics_component);
-            // draw bullet trajectory
-            graph_designer.drawCurve();
             // calculate Component
             calculateComponent("time");
             // set axis scale
             graph_designer.setAxisScale();
+            // draw base graphics elements on chart
+            graph_designer.instanceGraphicsElements(physics_component);
+            // draw bullet trajectory
+            graph_designer.drawCurve();
             // force Redraw the form
             this.Invalidate();
             //Console.WriteLine(" ");
