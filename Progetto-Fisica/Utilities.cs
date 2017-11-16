@@ -19,7 +19,7 @@ namespace Progetto_Fisica
         // generic constant
         public static int     number_round_decimal = 4;
         public static double  air_friction_coefficient = (1.5 * 0.000005);
-        public static double  g_power_acceleration = 9.7803184;
+        public static double  g_power_acceleration = 9.7803184; // 4.8902
 
         /********************************************************************
          * METHODS
