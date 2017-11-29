@@ -7,6 +7,8 @@
 
 # Other files and folders
 .settings/
+**/.vs/*
+**/.v15/*
 
 # Executables
 *.swf

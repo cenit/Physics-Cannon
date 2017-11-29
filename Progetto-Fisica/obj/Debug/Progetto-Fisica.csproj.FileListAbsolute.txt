@@ -34,3 +34,12 @@
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csproj.GenerateResource.Cache
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.exe
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.pdb
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\bin\Debug\Progetto-Fisica.exe.config
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\bin\Debug\Progetto-Fisica.exe
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\bin\Debug\Progetto-Fisica.pdb
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto_Fisica.Form1.resources
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto_Fisica.Properties.Resources.resources
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csproj.GenerateResource.Cache
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csproj.CoreCompileInputs.cache
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.exe
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.pdb
