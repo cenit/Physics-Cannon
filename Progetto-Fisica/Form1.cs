@@ -39,16 +39,16 @@ namespace Progetto_Fisica
         {
             try
             {
-                physics_component.angle_degrees   =   Math.Round(Double.Parse(Input_Angle.Text), Utilities.number_round_decimal);
-                physics_component.mass            =   Math.Round(Double.Parse(Input_Mass.Text), Utilities.number_round_decimal);
-                physics_component.speed           =   Math.Round(Double.Parse(Input_Speed.Text), Utilities.number_round_decimal); ;
-                physics_component.target_distance =   Math.Round(Double.Parse(Input_Target_X.Text), Utilities.number_round_decimal);
-                physics_component.target_height   =   Math.Round(Double.Parse(Input_Target_Y.Text), Utilities.number_round_decimal);
-                physics_component.time_flight     =   Math.Round(Double.Parse(Input_Time.Text), Utilities.number_round_decimal);
-                physics_component.time_rise       =   Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
-                physics_component.time_fall       =   Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
-                physics_component.bullet_diameter =   Math.Round(Double.Parse(Input_Bullet_Diameter.Text), Utilities.number_round_decimal);
-                physics_component.target_diameter = Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.angle_degrees   =     Math.Round(Double.Parse(Input_Angle.Text), Utilities.number_round_decimal);
+                physics_component.mass            =     Math.Round(Double.Parse(Input_Mass.Text), Utilities.number_round_decimal);
+                physics_component.speed           =     Math.Round(Double.Parse(Input_Speed.Text), Utilities.number_round_decimal); ;
+                physics_component.target_distance =     Math.Round(Double.Parse(Input_Target_X.Text), Utilities.number_round_decimal);
+                physics_component.target_height   =     Math.Round(Double.Parse(Input_Target_Y.Text), Utilities.number_round_decimal);
+                physics_component.time_flight     =     Math.Round(Double.Parse(Input_Time.Text), Utilities.number_round_decimal);
+                physics_component.time_rise       =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.time_fall       =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.bullet_diameter =     Math.Round(Double.Parse(Input_Bullet_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.target_diameter =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
             }
             catch (Exception ex)
             {
