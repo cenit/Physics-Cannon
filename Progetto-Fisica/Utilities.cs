@@ -45,7 +45,15 @@ namespace Progetto_Fisica
         // function for counting decimal digit of a input number
         public static int countDecimalDigits(double argument)
         {
-            return BitConverter.GetBytes(decimal.GetBits((decimal)argument)[3])[2];
+            try
+            {
+                return BitConverter.GetBytes(decimal.GetBits((decimal)argument)[3])[2];
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Eccezione Generata: " + ex.Message);
+            }
+            return 0;
         }
 
         // generate random (double) number between min and max values

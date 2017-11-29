@@ -45,8 +45,10 @@ namespace Progetto_Fisica
                 physics_component.target_distance =   Math.Round(Double.Parse(Input_Target_X.Text), Utilities.number_round_decimal);
                 physics_component.target_height   =   Math.Round(Double.Parse(Input_Target_Y.Text), Utilities.number_round_decimal);
                 physics_component.time_flight     =   Math.Round(Double.Parse(Input_Time.Text), Utilities.number_round_decimal);
-                physics_component.time_rise       =   Math.Round(Double.Parse(Input_Time_Rise.Text), Utilities.number_round_decimal);
-                physics_component.time_fall       =   Math.Round(Double.Parse(Input_Time_Fall.Text), Utilities.number_round_decimal);
+                physics_component.time_rise       =   Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.time_fall       =   Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.bullet_diameter =   Math.Round(Double.Parse(Input_Bullet_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.target_diameter = Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
             }
             catch (Exception ex)
             {
@@ -60,16 +62,16 @@ namespace Progetto_Fisica
         {
             try
             {
-                Input_Angle.Text        =   Math.Round(physics_component.angle_degrees, Utilities.number_round_decimal).ToString();
-                Input_Mass.Text         =   Math.Round(physics_component.mass, Utilities.number_round_decimal).ToString();
-                Input_Speed.Text        =   Math.Round(physics_component.speed, Utilities.number_round_decimal).ToString();
-                Input_Target_X.Text     =   Math.Round(physics_component.target_distance, Utilities.number_round_decimal).ToString();
-                Input_Target_Y.Text     =   Math.Round(physics_component.target_height, Utilities.number_round_decimal).ToString();
-                Input_Time.Text         =   Math.Round(physics_component.time_flight, Utilities.number_round_decimal).ToString();
-                Input_Time_Rise.Text    =   Math.Round(physics_component.time_rise, Utilities.number_round_decimal).ToString();
-                Input_Time_Fall.Text    =   Math.Round(physics_component.time_fall, Utilities.number_round_decimal).ToString();
-                Output_Height.Text      =   Math.Round(physics_component.max_height, Utilities.number_round_decimal).ToString();
-                Output_Distance.Text    =   Math.Round(physics_component.final_position, Utilities.number_round_decimal).ToString();
+                Input_Angle.Text                =   Math.Round(physics_component.angle_degrees, Utilities.number_round_decimal).ToString();
+                Input_Mass.Text                 =   Math.Round(physics_component.mass, Utilities.number_round_decimal).ToString();
+                Input_Speed.Text                =   Math.Round(physics_component.speed, Utilities.number_round_decimal).ToString();
+                Input_Target_X.Text             =   Math.Round(physics_component.target_distance, Utilities.number_round_decimal).ToString();
+                Input_Target_Y.Text             =   Math.Round(physics_component.target_height, Utilities.number_round_decimal).ToString();
+                Input_Time.Text                 =   Math.Round(physics_component.time_flight, Utilities.number_round_decimal).ToString();
+                Input_Target_Diameter.Text      =   Math.Round(physics_component.target_diameter, Utilities.number_round_decimal).ToString();
+                Input_Bullet_Diameter.Text      =   Math.Round(physics_component.bullet_diameter, Utilities.number_round_decimal).ToString();
+                Output_Height.Text              =   Math.Round(physics_component.max_height, Utilities.number_round_decimal).ToString();
+                Output_Distance.Text            =   Math.Round(physics_component.final_position, Utilities.number_round_decimal).ToString();
                 // bullet hit the target ?
                 if (physics_component.target_hit)
                     Output_Target_Hit.Text = "SI";
@@ -136,6 +138,11 @@ namespace Progetto_Fisica
             // force Redraw the form
             this.Invalidate();
             //Console.WriteLine(" ");
+        }
+
+        private void Graph_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

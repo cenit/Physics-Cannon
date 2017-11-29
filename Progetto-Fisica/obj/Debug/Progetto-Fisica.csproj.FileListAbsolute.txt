@@ -43,3 +43,4 @@ C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto
 C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csproj.CoreCompileInputs.cache
 C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.exe
 C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.pdb
+C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csprojResolveAssemblyReference.cache

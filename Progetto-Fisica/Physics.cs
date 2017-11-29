@@ -25,6 +25,8 @@ namespace Progetto_Fisica
         public double vi_y;
         public double angle_radiants;
         public double final_position;
+        public double bullet_diameter;
+        public double target_diameter;
         public bool   target_hit;
 
         /********************************************************************
@@ -45,6 +47,8 @@ namespace Progetto_Fisica
             vi_y = 0;
             angle_radiants = 0;
             final_position = 0;
+            bullet_diameter = 0;
+            target_diameter = 0;
             target_hit = false;
         }
 
