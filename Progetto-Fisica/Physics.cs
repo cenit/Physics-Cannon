@@ -47,8 +47,8 @@ namespace Progetto_Fisica
             vi_y = 0;
             angle_radiants = 0;
             final_position = 0;
-            bullet_diameter = 0;
-            target_diameter = 0;
+            bullet_diameter = 2;
+            target_diameter = 4;
             target_hit = false;
         }
 
@@ -72,18 +72,46 @@ namespace Progetto_Fisica
             target_hit = false;
             int number_of_decimal_digits = Utilities.number_round_decimal;
             // count the decimal digits of target input position
-            if (Utilities.countDecimalDigits(target_height)> Utilities.countDecimalDigits(target_distance))
+            if (Utilities.countDecimalDigits(target_height) > Utilities.countDecimalDigits(target_distance))
                 number_of_decimal_digits = Utilities.countDecimalDigits(target_height);
             else
                 number_of_decimal_digits = Utilities.countDecimalDigits(target_distance);
             // check number of decimal digits for approximation (min = 2)
-            if(number_of_decimal_digits<2)
+            if (number_of_decimal_digits < 2)
                 number_of_decimal_digits = 2;
             // calculate bullet's y positon based on target's x position
             double y_bullet = bullet_trajectory_current_position_y(Math.Round(target_distance, number_of_decimal_digits));
             // if this y is equal to real target's y position then bullet will hit the target
-            if ((Math.Round(target_height, number_of_decimal_digits)) == Math.Round(y_bullet, number_of_decimal_digits))
+            double target_max_y = Math.Round(target_height, number_of_decimal_digits) + target_diameter;
+            double target_min_y = Math.Round(target_height, number_of_decimal_digits) - target_diameter;
+            double bullet_top_y = Math.Round(y_bullet, number_of_decimal_digits) + bullet_diameter;
+            double bullet_bottom_y = Math.Round(y_bullet, number_of_decimal_digits) - bullet_diameter;
+            /* if ((Math.Round(target_height, number_of_decimal_digits)) == Math.Round(y_bullet, number_of_decimal_digits))
+                 target_hit = true; */
+            // check if bullet (which is under the target) hit target
+            /*if ((bullet_top_y >= target_min_y) && (bullet_bottom_y < target_min_y))
+            {
+                Console.WriteLine("bersaglio: {"+target_min_y + ", " + target_max_y + "} ");
+                Console.WriteLine("proiettile: {" + bullet_bottom_y + ", " + bullet_top_y + "} ");
+                Console.WriteLine("bersaglio colpito da sotto");
                 target_hit = true;
+            }*/
+            // check if bullet (which is between the target) hit target
+            if ((bullet_bottom_y >= target_min_y) && (bullet_top_y <= target_max_y))
+            {
+                /*Console.WriteLine("bersaglio: {" + target_min_y + ", " + target_max_y + "} ");
+                Console.WriteLine("proiettile: {" + bullet_bottom_y + ", " + bullet_top_y + "} ");
+                Console.WriteLine("bersaglio colpito dal mezzo");*/
+                target_hit = true;
+            }
+            // check if bullet (which is on top of the target) hit target
+            /*if ((bullet_bottom_y <= target_max_y) && (bullet_top_y > target_max_y))
+            {
+                Console.WriteLine("bersaglio: {" + target_min_y + ", " + target_max_y + "} ");
+                Console.WriteLine("proiettile: {" + bullet_bottom_y + ", " + bullet_top_y + "} ");
+                Console.WriteLine("bersaglio colpito da sopra");
+                target_hit = true;
+            }*/
         }
 
         // calculate vi_x

@@ -44,3 +44,4 @@ C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto
 C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.exe
 C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.pdb
 C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csprojResolveAssemblyReference.cache
+\\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csprojResolveAssemblyReference.cache

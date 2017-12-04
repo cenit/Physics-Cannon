@@ -17,7 +17,7 @@ namespace Progetto_Fisica
         public static int   GRAPH_ELEMENTS_NUMBER = 500;
         public static double GRAPH_CURVE_INCREMENT = 1;
         // generic constant
-        public static int     number_round_decimal = 4;
+        public static int     number_round_decimal = 2;
         public static double  air_friction_coefficient = (1.5 * 0.000005);
         public static double  g_power_acceleration = 9.7803184; // 4.8902
 

@@ -56,7 +56,7 @@ namespace Progetto_Fisica
         }
 
         // set default style
-        private void setStyle()
+        private void setStyle(Physics instance_physics)
         {
             // clear default graph series values
             Graph.Series["Series_Cannon"].Points.Clear();
@@ -66,7 +66,7 @@ namespace Progetto_Fisica
             Graph.Series["Series_Cannon"].Color = Color.LightSkyBlue;
             Graph.Series["Series_Curve"].Color = Color.LightSkyBlue;
             Graph.Series["Series_Target"].Color = Color.Orange;
-            Graph.Series["Series_Curve"].BorderWidth = 2;
+            Graph.Series["Series_Curve"].BorderWidth = 3;
             //Graph.Series["Series_Curve"].BorderDashStyle = ChartDashStyle.Dash;
             Graph.Series["Series_Set_Axis_Scale"].IsVisibleInLegend = false;
             // other settings
@@ -79,7 +79,7 @@ namespace Progetto_Fisica
             // update physics instance
             updatePhysicsInstance(instance_physics);
             // set default style
-            setStyle();
+            setStyle(instance_physics);
             // draw cannon
             Graph.Series["Series_Cannon"].Points.AddXY(0, 0);
             // draw target
