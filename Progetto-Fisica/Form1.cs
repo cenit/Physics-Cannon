@@ -125,7 +125,7 @@ namespace Progetto_Fisica
             writeInputComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void launch_simulation()
         {
             // read data from Input TextBox
             readInputComponent();
@@ -140,17 +140,23 @@ namespace Progetto_Fisica
             // force Redraw the form
             this.Invalidate();
             //Console.WriteLine(" ");
+
         }
 
-        private void Graph_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            launch_simulation();
         }
 
-        private void label16_Click(object sender, EventArgs e)
+        /*private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                launch_simulation();
+                Console.WriteLine("Enter key pressed");
+            }
 
-        }
+        }*/
     }
 
 }

@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0");
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0");
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Input_Angle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Input_Target_X = new System.Windows.Forms.TextBox();
@@ -45,7 +45,13 @@
             this.Input_Target_Y = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Output_Speed = new System.Windows.Forms.Label();
+            this.Input_Bullet_Diameter = new System.Windows.Forms.Label();
+            this.Output_Height = new System.Windows.Forms.Label();
+            this.Output_Energy = new System.Windows.Forms.Label();
+            this.Output_Distance = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.Input_Time = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,18 +60,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.Input_Target_Diameter = new System.Windows.Forms.TextBox();
             this.Output_Target_Hit = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Graph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Input_Bullet_Diameter = new System.Windows.Forms.Label();
-            this.Input_Time = new System.Windows.Forms.Label();
-            this.Output_Energy = new System.Windows.Forms.Label();
-            this.Output_Distance = new System.Windows.Forms.Label();
-            this.Input_Target_Diameter = new System.Windows.Forms.TextBox();
-            this.Output_Height = new System.Windows.Forms.Label();
-            this.Output_Speed = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Graph)).BeginInit();
             this.panel1.SuspendLayout();
@@ -97,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(967, 73);
+            this.label2.Location = new System.Drawing.Point(966, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 25);
             this.label2.TabIndex = 10;
@@ -115,7 +115,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(967, 469);
+            this.label4.Location = new System.Drawing.Point(966, 469);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(247, 25);
             this.label4.TabIndex = 12;
@@ -154,7 +154,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.4551F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.5449F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 487F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 488F));
             this.tableLayoutPanel1.Controls.Add(this.Output_Speed, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.Input_Bullet_Diameter, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.Output_Height, 3, 2);
@@ -202,6 +202,51 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1930, 539);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
+            // Output_Speed
+            // 
+            this.Output_Speed.AutoSize = true;
+            this.Output_Speed.Location = new System.Drawing.Point(1444, 206);
+            this.Output_Speed.Name = "Output_Speed";
+            this.Output_Speed.Size = new System.Drawing.Size(33, 25);
+            this.Output_Speed.TabIndex = 21;
+            this.Output_Speed.Text = "---";
+            // 
+            // Input_Bullet_Diameter
+            // 
+            this.Input_Bullet_Diameter.AutoSize = true;
+            this.Input_Bullet_Diameter.Location = new System.Drawing.Point(383, 469);
+            this.Input_Bullet_Diameter.Name = "Input_Bullet_Diameter";
+            this.Input_Bullet_Diameter.Size = new System.Drawing.Size(33, 25);
+            this.Input_Bullet_Diameter.TabIndex = 17;
+            this.Input_Bullet_Diameter.Text = "---";
+            // 
+            // Output_Height
+            // 
+            this.Output_Height.AutoSize = true;
+            this.Output_Height.Location = new System.Drawing.Point(1444, 142);
+            this.Output_Height.Name = "Output_Height";
+            this.Output_Height.Size = new System.Drawing.Size(33, 25);
+            this.Output_Height.TabIndex = 20;
+            this.Output_Height.Text = "---";
+            // 
+            // Output_Energy
+            // 
+            this.Output_Energy.AutoSize = true;
+            this.Output_Energy.Location = new System.Drawing.Point(1444, 0);
+            this.Output_Energy.Name = "Output_Energy";
+            this.Output_Energy.Size = new System.Drawing.Size(33, 25);
+            this.Output_Energy.TabIndex = 18;
+            this.Output_Energy.Text = "---";
+            // 
+            // Output_Distance
+            // 
+            this.Output_Distance.AutoSize = true;
+            this.Output_Distance.Location = new System.Drawing.Point(1444, 73);
+            this.Output_Distance.Name = "Output_Distance";
+            this.Output_Distance.Size = new System.Drawing.Size(33, 25);
+            this.Output_Distance.TabIndex = 19;
+            this.Output_Distance.Text = "---";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -211,10 +256,19 @@
             this.label14.TabIndex = 32;
             this.label14.Text = "Diametro Proiettile";
             // 
+            // Input_Time
+            // 
+            this.Input_Time.AutoSize = true;
+            this.Input_Time.Location = new System.Drawing.Point(383, 73);
+            this.Input_Time.Name = "Input_Time";
+            this.Input_Time.Size = new System.Drawing.Size(33, 25);
+            this.Input_Time.TabIndex = 17;
+            this.Input_Time.Text = "---";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(967, 0);
+            this.label11.Location = new System.Drawing.Point(966, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(170, 25);
             this.label11.TabIndex = 25;
@@ -255,7 +309,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(967, 142);
+            this.label7.Location = new System.Drawing.Point(966, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(279, 25);
             this.label7.TabIndex = 16;
@@ -264,7 +318,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(967, 206);
+            this.label8.Location = new System.Drawing.Point(966, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 18;
@@ -279,10 +333,17 @@
             this.label12.TabIndex = 27;
             this.label12.Text = "Diametro Bersaglio";
             // 
+            // Input_Target_Diameter
+            // 
+            this.Input_Target_Diameter.Location = new System.Drawing.Point(383, 410);
+            this.Input_Target_Diameter.Name = "Input_Target_Diameter";
+            this.Input_Target_Diameter.Size = new System.Drawing.Size(126, 31);
+            this.Input_Target_Diameter.TabIndex = 31;
+            // 
             // Output_Target_Hit
             // 
             this.Output_Target_Hit.AutoSize = true;
-            this.Output_Target_Hit.Location = new System.Drawing.Point(1445, 469);
+            this.Output_Target_Hit.Location = new System.Drawing.Point(1444, 469);
             this.Output_Target_Hit.Name = "Output_Target_Hit";
             this.Output_Target_Hit.Size = new System.Drawing.Size(43, 25);
             this.Output_Target_Hit.TabIndex = 34;
@@ -310,45 +371,44 @@
             // 
             // Graph
             // 
-            chartArea3.Name = "ChartArea1";
-            this.Graph.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.Graph.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.Graph.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Graph.Legends.Add(legend1);
             this.Graph.Location = new System.Drawing.Point(3, -2);
             this.Graph.Name = "Graph";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
-            series9.Legend = "Legend1";
-            series9.Name = "Series_Cannon";
-            series9.Points.Add(dataPoint3);
-            series9.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series9.YValuesPerPoint = 2;
-            series9.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Legend = "Legend1";
-            series10.Name = "Series_Curve";
-            series10.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series10.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
-            series11.Legend = "Legend1";
-            series11.Name = "Series_Target";
-            series11.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series11.YValuesPerPoint = 2;
-            series11.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
-            series12.Legend = "Legend1";
-            series12.Name = "Series_Set_Axis_Scale";
-            this.Graph.Series.Add(series9);
-            this.Graph.Series.Add(series10);
-            this.Graph.Series.Add(series11);
-            this.Graph.Series.Add(series12);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
+            series1.Legend = "Legend1";
+            series1.Name = "Series_Cannon";
+            series1.Points.Add(dataPoint1);
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series1.YValuesPerPoint = 2;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Series_Curve";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bubble;
+            series3.Legend = "Legend1";
+            series3.Name = "Series_Target";
+            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series3.YValuesPerPoint = 2;
+            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series4.Legend = "Legend1";
+            series4.Name = "Series_Set_Axis_Scale";
+            this.Graph.Series.Add(series1);
+            this.Graph.Series.Add(series2);
+            this.Graph.Series.Add(series3);
+            this.Graph.Series.Add(series4);
             this.Graph.Size = new System.Drawing.Size(1930, 766);
             this.Graph.TabIndex = 4;
             this.Graph.Text = "chart1";
-            this.Graph.Click += new System.EventHandler(this.Graph_Click);
             // 
             // panel1
             // 
@@ -361,69 +421,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1930, 771);
             this.panel1.TabIndex = 4;
-            // 
-            // Input_Bullet_Diameter
-            // 
-            this.Input_Bullet_Diameter.AutoSize = true;
-            this.Input_Bullet_Diameter.Location = new System.Drawing.Point(383, 469);
-            this.Input_Bullet_Diameter.Name = "Input_Bullet_Diameter";
-            this.Input_Bullet_Diameter.Size = new System.Drawing.Size(33, 25);
-            this.Input_Bullet_Diameter.TabIndex = 17;
-            this.Input_Bullet_Diameter.Text = "---";
-            // 
-            // Input_Time
-            // 
-            this.Input_Time.AutoSize = true;
-            this.Input_Time.Location = new System.Drawing.Point(383, 73);
-            this.Input_Time.Name = "Input_Time";
-            this.Input_Time.Size = new System.Drawing.Size(33, 25);
-            this.Input_Time.TabIndex = 17;
-            this.Input_Time.Text = "---";
-            // 
-            // Output_Energy
-            // 
-            this.Output_Energy.AutoSize = true;
-            this.Output_Energy.Location = new System.Drawing.Point(1445, 0);
-            this.Output_Energy.Name = "Output_Energy";
-            this.Output_Energy.Size = new System.Drawing.Size(33, 25);
-            this.Output_Energy.TabIndex = 18;
-            this.Output_Energy.Text = "---";
-            this.Output_Energy.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // Output_Distance
-            // 
-            this.Output_Distance.AutoSize = true;
-            this.Output_Distance.Location = new System.Drawing.Point(1445, 73);
-            this.Output_Distance.Name = "Output_Distance";
-            this.Output_Distance.Size = new System.Drawing.Size(33, 25);
-            this.Output_Distance.TabIndex = 19;
-            this.Output_Distance.Text = "---";
-            // 
-            // Input_Target_Diameter
-            // 
-            this.Input_Target_Diameter.Enabled = false;
-            this.Input_Target_Diameter.Location = new System.Drawing.Point(383, 410);
-            this.Input_Target_Diameter.Name = "Input_Target_Diameter";
-            this.Input_Target_Diameter.Size = new System.Drawing.Size(126, 31);
-            this.Input_Target_Diameter.TabIndex = 31;
-            // 
-            // Output_Height
-            // 
-            this.Output_Height.AutoSize = true;
-            this.Output_Height.Location = new System.Drawing.Point(1445, 142);
-            this.Output_Height.Name = "Output_Height";
-            this.Output_Height.Size = new System.Drawing.Size(33, 25);
-            this.Output_Height.TabIndex = 20;
-            this.Output_Height.Text = "---";
-            // 
-            // Output_Speed
-            // 
-            this.Output_Speed.AutoSize = true;
-            this.Output_Speed.Location = new System.Drawing.Point(1445, 206);
-            this.Output_Speed.Name = "Output_Speed";
-            this.Output_Speed.Size = new System.Drawing.Size(33, 25);
-            this.Output_Speed.TabIndex = 21;
-            this.Output_Speed.Text = "---";
             // 
             // Form1
             // 
