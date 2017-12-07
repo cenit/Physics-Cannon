@@ -95,7 +95,6 @@ namespace Progetto_Fisica
             Console.WriteLine(" --------------------------------------------------------------------- ");
             Console.WriteLine("(proiettile) --- INF ==> " + bullet_bottom_y + "  ---  SUP ==> " + bullet_top_y + " --- ");
             Console.WriteLine("(bersaglio)  --- INF ==> " + target_min_y    + "  ---  SUP ==> " + target_max_y + " --- ");
-            Console.WriteLine(" --------------------------------------------------------------------- ");
             if ((bullet_bottom_y < target_min_y) && (bullet_top_y >= target_min_y) )
             {
                 Console.WriteLine("bersaglio colpito da sotto");
@@ -116,8 +115,11 @@ namespace Progetto_Fisica
                 target_hit = true;
             }
             // target not hitted
-            if(target_hit==false)
+            if (target_hit == false)
+            {
                 Console.WriteLine("bersaglio non colpito");
+            }
+            Console.WriteLine(" --------------------------------------------------------------------- ");
         }
 
         // calculate vi_x
