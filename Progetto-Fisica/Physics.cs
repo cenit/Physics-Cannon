@@ -27,20 +27,24 @@ namespace Progetto_Fisica
         public double final_position;
         public double bullet_diameter;
         public double target_diameter;
+        public double energy;
         public bool   target_hit;
+
+        public double target_start_position_x = 0;
+        public double target_start_position_y = 10;
 
         /********************************************************************
         * METHODS
         ********************************************************************/
         public Physics()
         {
-            angle_degrees = 0;
+            angle_degrees = 30;
             time_flight = 0;
             time_rise = 0;
             time_fall = 0;
-            target_distance = 1.111;
-            target_height = 5.111;
-            speed = 0;
+            target_distance = target_start_position_x;
+            target_height = target_start_position_y;
+            speed = 30;
             mass = 0;
             max_height = 0;
             vi_x = 0;
@@ -50,6 +54,7 @@ namespace Progetto_Fisica
             bullet_diameter = 2;
             target_diameter = 4;
             target_hit = false;
+            energy = 0;
         }
 
         // function for calculate y position of bullet
@@ -82,36 +87,37 @@ namespace Progetto_Fisica
             // calculate bullet's y positon based on target's x position
             double y_bullet = bullet_trajectory_current_position_y(Math.Round(target_distance, number_of_decimal_digits));
             // if this y is equal to real target's y position then bullet will hit the target
-            double target_max_y = Math.Round(target_height, number_of_decimal_digits) + target_diameter;
-            double target_min_y = Math.Round(target_height, number_of_decimal_digits) - target_diameter;
-            double bullet_top_y = Math.Round(y_bullet, number_of_decimal_digits) + bullet_diameter;
-            double bullet_bottom_y = Math.Round(y_bullet, number_of_decimal_digits) - bullet_diameter;
-            /* if ((Math.Round(target_height, number_of_decimal_digits)) == Math.Round(y_bullet, number_of_decimal_digits))
-                 target_hit = true; */
+            double target_max_y = Math.Round(target_height, number_of_decimal_digits) + (target_diameter/2);
+            double target_min_y = Math.Round(target_height, number_of_decimal_digits) - (target_diameter/2);
+            double bullet_top_y = Math.Round(y_bullet, number_of_decimal_digits) + (bullet_diameter/2);
+            double bullet_bottom_y = Math.Round(y_bullet, number_of_decimal_digits) - (bullet_diameter/2);
             // check if bullet (which is under the target) hit target
-            /*if ((bullet_top_y >= target_min_y) && (bullet_bottom_y < target_min_y))
+            Console.WriteLine(" --------------------------------------------------------------------- ");
+            Console.WriteLine("(proiettile) --- INF ==> " + bullet_bottom_y + "  ---  SUP ==> " + bullet_top_y + " --- ");
+            Console.WriteLine("(bersaglio)  --- INF ==> " + target_min_y    + "  ---  SUP ==> " + target_max_y + " --- ");
+            Console.WriteLine(" --------------------------------------------------------------------- ");
+            if ((bullet_bottom_y < target_min_y) && (bullet_top_y >= target_min_y) )
             {
-                Console.WriteLine("bersaglio: {"+target_min_y + ", " + target_max_y + "} ");
-                Console.WriteLine("proiettile: {" + bullet_bottom_y + ", " + bullet_top_y + "} ");
                 Console.WriteLine("bersaglio colpito da sotto");
                 target_hit = true;
-            }*/
+            }
+
             // check if bullet (which is between the target) hit target
             if ((bullet_bottom_y >= target_min_y) && (bullet_top_y <= target_max_y))
             {
-                /*Console.WriteLine("bersaglio: {" + target_min_y + ", " + target_max_y + "} ");
-                Console.WriteLine("proiettile: {" + bullet_bottom_y + ", " + bullet_top_y + "} ");
-                Console.WriteLine("bersaglio colpito dal mezzo");*/
+                //Console.WriteLine("bersaglio colpito in pieno");
                 target_hit = true;
             }
+
             // check if bullet (which is on top of the target) hit target
-            /*if ((bullet_bottom_y <= target_max_y) && (bullet_top_y > target_max_y))
+            if ((bullet_bottom_y <= target_max_y) && (bullet_top_y > target_max_y))
             {
-                Console.WriteLine("bersaglio: {" + target_min_y + ", " + target_max_y + "} ");
-                Console.WriteLine("proiettile: {" + bullet_bottom_y + ", " + bullet_top_y + "} ");
                 Console.WriteLine("bersaglio colpito da sopra");
                 target_hit = true;
-            }*/
+            }
+            // target not hitted
+            if(target_hit==false)
+                Console.WriteLine("bersaglio non colpito");
         }
 
         // calculate vi_x
@@ -128,7 +134,7 @@ namespace Progetto_Fisica
             vi_y = speed * Math.Sin(angle_radiants);
         }
 
-        // calculate vi_y
+        // calculate final position
         public void calculateFinalPosition()
         {
             angle_radiants = Utilities.ToRadians(angle_degrees);
@@ -165,8 +171,14 @@ namespace Progetto_Fisica
         // generate random valid position for target (if i want the bullet hit this)
         public void randomPositionForHitTarget()
         {
-            target_distance = Utilities.generateNumberRandom(final_position/2, final_position);
-            target_height=bullet_trajectory_current_position_y(target_distance);
+            // for directly changing values on input component
+            //target_distance = Utilities.generateNumberRandom(final_position/2, final_position);
+            //target_height=bullet_trajectory_current_position_y(target_distance);
+
+            double x = Math.Round(Utilities.generateNumberRandom(final_position / 2, final_position), Utilities.number_round_decimal);
+            double y = Math.Round(bullet_trajectory_current_position_y(x), Utilities.number_round_decimal);
+            // Show on console the position
+            Console.WriteLine("Move target to : [" + x + ", " + y + "] ");
         }
     }
 }

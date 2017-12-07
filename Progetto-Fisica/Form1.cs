@@ -57,7 +57,7 @@ namespace Progetto_Fisica
 
         }
 
-        // write Input Value
+        // write Output Value
         public void writeInputComponent()
         {
             try
@@ -72,6 +72,8 @@ namespace Progetto_Fisica
                 Input_Bullet_Diameter.Text      =   Math.Round(physics_component.bullet_diameter, Utilities.number_round_decimal).ToString();
                 Output_Height.Text              =   Math.Round(physics_component.max_height, Utilities.number_round_decimal).ToString();
                 Output_Distance.Text            =   Math.Round(physics_component.final_position, Utilities.number_round_decimal).ToString();
+                Output_Energy.Text              =   Math.Round(physics_component.energy, Utilities.number_round_decimal).ToString();
+
                 // bullet hit the target ?
                 if (physics_component.target_hit)
                     Output_Target_Hit.Text = "SI";
@@ -113,8 +115,8 @@ namespace Progetto_Fisica
             // distance covered
             physics_component.calculateFinalPosition();
             // work with bullet and target position
-            if ((physics_component.target_distance == 1.111) && (physics_component.target_height == 5.111))
-                // no input target position inserted
+            if ((physics_component.target_distance == physics_component.target_start_position_x) && (physics_component.target_height == physics_component.target_start_position_y))
+                // no input target position inserted --> shown on console an example of target's position hitted
                 physics_component.randomPositionForHitTarget();
             else
                 // bullet hit the target ?
@@ -141,6 +143,11 @@ namespace Progetto_Fisica
         }
 
         private void Graph_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
         {
 
         }
