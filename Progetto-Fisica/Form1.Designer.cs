@@ -67,7 +67,7 @@
             this.Graph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Graph)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.Graph)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -371,6 +371,7 @@
             // 
             // Graph
             // 
+            /*
             chartArea1.Name = "ChartArea1";
             this.Graph.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -409,6 +410,7 @@
             this.Graph.Size = new System.Drawing.Size(1930, 766);
             this.Graph.TabIndex = 4;
             this.Graph.Text = "chart1";
+            */
             // 
             // panel1
             // 
@@ -436,7 +438,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Graph)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.Graph)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -58,6 +58,7 @@ namespace Progetto_Fisica
         // set default style
         private void setStyle(Physics instance_physics)
         {
+            /*
             // clear default graph series values
             Graph.Series["Series_Cannon"].Points.Clear();
             Graph.Series["Series_Curve"].Points.Clear();
@@ -71,6 +72,7 @@ namespace Progetto_Fisica
             Graph.Series["Series_Set_Axis_Scale"].IsVisibleInLegend = false;
             // other settings
             Graph.ChartAreas[0].AxisX.ScaleView.Zoomable = true;
+            */
         }
 
         // instance base graphics elements
@@ -81,9 +83,9 @@ namespace Progetto_Fisica
             // set default style
             setStyle(instance_physics);
             // draw cannon
-            Graph.Series["Series_Cannon"].Points.AddXY(0, 0);
+            //Graph.Series["Series_Cannon"].Points.AddXY(0, 0);
             // draw target
-            Graph.Series["Series_Target"].Points.AddXY(physics_component.target_distance, physics_component.target_height);
+            //Graph.Series["Series_Target"].Points.AddXY(physics_component.target_distance, physics_component.target_height);
 
         }
 
