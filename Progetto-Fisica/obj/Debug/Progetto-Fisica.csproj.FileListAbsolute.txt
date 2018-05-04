@@ -39,7 +39,6 @@ C:\Users\enrico\Documents\User\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\bin\Debug\Progetto-Fisica.exe.config
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\bin\Debug\Progetto-Fisica.exe
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\bin\Debug\Progetto-Fisica.pdb
-\\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csprojResolveAssemblyReference.cache
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto_Fisica.Form1.resources
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto_Fisica.Properties.Resources.resources
 \\Mac\Home\Desktop\Università\Fisica\Progetto\Physics-Cannon\Progetto-Fisica\obj\Debug\Progetto-Fisica.csproj.GenerateResource.Cache

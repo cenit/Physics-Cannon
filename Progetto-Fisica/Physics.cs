@@ -28,6 +28,7 @@ namespace Progetto_Fisica
         public double bullet_diameter;
         public double target_diameter;
         public double energy;
+        public double air_friction;
         public bool   target_hit;
 
         public double target_start_position_x = 0;

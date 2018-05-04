@@ -49,6 +49,7 @@ namespace Progetto_Fisica
                 physics_component.time_fall       =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
                 physics_component.bullet_diameter =     Math.Round(Double.Parse(Input_Bullet_Diameter.Text), Utilities.number_round_decimal);
                 physics_component.target_diameter =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
+                physics_component.air_friction =        Math.Round(Double.Parse(Air_Friction.Text), Utilities.number_round_decimal);
             }
             catch (Exception ex)
             {
