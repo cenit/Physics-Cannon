@@ -32,7 +32,7 @@ namespace Progetto_Fisica
         public bool   target_hit;
         public double air_speed;
 
-        public double target_start_position_x = 0;
+        public double target_start_position_x = 10;
         public double target_start_position_y = 10;
 
         /********************************************************************
@@ -67,7 +67,7 @@ namespace Progetto_Fisica
             double temporary_bullet_position_y = 0;
             angle_radiants = Utilities.ToRadians(angle_degrees);
             calculateViX();
-            calculateViY();
+            calculateViY(temporary_bullet_position_x);
             temporary_bullet_position_y = -1 * (Utilities.g_power_acceleration/2) / (Math.Pow(vi_x, 2)) * Math.Pow(temporary_bullet_position_x, 2);
             temporary_bullet_position_y += (vi_y / vi_x) * temporary_bullet_position_x;
             //Console.WriteLine("posizione proiettile -->  [" + temporary_bullet_position_x + ", " + temporary_bullet_position_y + "]");
@@ -143,11 +143,26 @@ namespace Progetto_Fisica
             vi_y = speed * Math.Sin(angle_radiants) - air_speed * Math.Sin(angle_radiants);
         }
 
+        // calculate vi_y
+        public void calculateViY(double x)
+        {
+            angle_radiants = Utilities.ToRadians(angle_degrees);
+            //vi_y = speed * Math.Sin(angle_radiants);
+            // add air speed opposition
+            vi_y = speed * Math.Sin(angle_radiants) - air_speed * Math.Sin(angle_radiants);
+            // trying add areodynamic resistance
+            //double currentTime = x_current_postion / vi_x ;
+            //Console.WriteLine("aria [" + air_speed + "] -- tempo [" + (x / vi_x) + "] -- massa [" + mass + "]");
+            //vi_y = mass * Utilities.g_power_acceleration / air_speed * (1 - Math.Pow(Utilities.e_constant, (-air_speed * (x/vi_x) / mass)));
+        }
+
         // calculate final position
         public void calculateFinalPosition()
         {
             angle_radiants = Utilities.ToRadians(angle_degrees);
-            final_position = vi_x * time_flight;
+            double angle = Utilities.ToRadians(2*angle_degrees);
+            final_position = Math.Pow(speed, 2)/Utilities.g_power_acceleration * Math.Sin(angle);
+            //final_position = vi_x * time_flight;
         }
 
         // function for calculate maximum height of bullet
@@ -179,13 +194,8 @@ namespace Progetto_Fisica
         public void randomPositionForHitTarget()
         {
             // for directly changing values on input component
-            //target_distance = Utilities.generateNumberRandom(final_position/2, final_position);
-            //target_height=bullet_trajectory_current_position_y(target_distance);
-
-            double x = Math.Round(Utilities.generateNumberRandom(final_position / 2, final_position), Utilities.number_round_decimal);
-            double y = Math.Round(bullet_trajectory_current_position_y(x), Utilities.number_round_decimal);
-            // Show on console the position
-            Console.WriteLine("Move target to : [" + x + ", " + y + "] ");
+            target_distance = Utilities.generateNumberRandom(final_position/2, final_position);
+            target_height=bullet_trajectory_current_position_y(target_distance);
         }
 
         public void calculateEnergy()

@@ -51,7 +51,7 @@ namespace Progetto_Fisica
                 physics_component.time_fall       =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
                 physics_component.bullet_diameter =     Math.Round(Double.Parse(Input_Bullet_Diameter.Text), Utilities.number_round_decimal);
                 physics_component.target_diameter =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
-                physics_component.air_speed       =     Math.Round(Double.Parse(Input_Air_Speed.Text), Utilities.number_round_decimal);
+                physics_component.air_speed       =     Double.Parse(Input_Air_Speed.Text);
                 
             }
             catch (Exception ex)
@@ -77,7 +77,7 @@ namespace Progetto_Fisica
                 Output_Height.Text              =   Math.Round(physics_component.max_height, Utilities.number_round_decimal).ToString();
                 Output_Distance.Text            =   Math.Round(physics_component.final_position, Utilities.number_round_decimal).ToString();
                 Output_Energy.Text              =   Math.Round(physics_component.energy, Utilities.number_round_decimal).ToString();
-                Input_Air_Speed.Text            =   Math.Round(physics_component.air_speed, Utilities.number_round_decimal).ToString();
+                Input_Air_Speed.Text            =   physics_component.air_speed.ToString();
 
                 // bullet hit the target ?
                 if (physics_component.target_hit)
@@ -120,10 +120,10 @@ namespace Progetto_Fisica
             // distance covered
             physics_component.calculateFinalPosition();
             // work with bullet and target position
-            if ((physics_component.target_distance == physics_component.target_start_position_x) && (physics_component.target_height == physics_component.target_start_position_y))
+            //if ((physics_component.target_distance == physics_component.target_start_position_x) && (physics_component.target_height == physics_component.target_start_position_y))
                 // no input target position inserted --> shown on console an example of target's position hitted
-                physics_component.randomPositionForHitTarget();
-            else
+                //physics_component.randomPositionForHitTarget();
+           // else
                 // bullet hit the target ?
                 physics_component.hit_target();
             // energy
@@ -152,6 +152,13 @@ namespace Progetto_Fisica
 
         private void button1_Click(object sender, EventArgs e)
         {
+            launch_simulation();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            physics_component.randomPositionForHitTarget();
+            writeInputComponent();
             launch_simulation();
         }
 
