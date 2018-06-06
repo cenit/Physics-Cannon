@@ -41,6 +41,8 @@ namespace Progetto_Fisica
             {
                 physics_component.angle_degrees   =     Math.Round(Double.Parse(Input_Angle.Text), Utilities.number_round_decimal);
                 physics_component.mass            =     Math.Round(Double.Parse(Input_Mass.Text), Utilities.number_round_decimal);
+                if (physics_component.mass <= 0)
+                    physics_component.mass = 1;
                 physics_component.speed           =     Math.Round(Double.Parse(Input_Speed.Text), Utilities.number_round_decimal); ;
                 physics_component.target_distance =     Math.Round(Double.Parse(Input_Target_X.Text), Utilities.number_round_decimal);
                 physics_component.target_height   =     Math.Round(Double.Parse(Input_Target_Y.Text), Utilities.number_round_decimal);
@@ -50,6 +52,7 @@ namespace Progetto_Fisica
                 physics_component.bullet_diameter =     Math.Round(Double.Parse(Input_Bullet_Diameter.Text), Utilities.number_round_decimal);
                 physics_component.target_diameter =     Math.Round(Double.Parse(Input_Target_Diameter.Text), Utilities.number_round_decimal);
                 physics_component.air_speed       =     Math.Round(Double.Parse(Input_Air_Speed.Text), Utilities.number_round_decimal);
+                
             }
             catch (Exception ex)
             {

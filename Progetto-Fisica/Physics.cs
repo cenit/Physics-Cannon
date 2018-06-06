@@ -47,7 +47,7 @@ namespace Progetto_Fisica
             target_distance = target_start_position_x;
             target_height = target_start_position_y;
             speed = 30;
-            mass = 10;
+            mass = 1;
             max_height = 0;
             vi_x = 0;
             vi_y = 0;
