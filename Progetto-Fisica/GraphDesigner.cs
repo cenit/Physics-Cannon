@@ -51,6 +51,7 @@ namespace Progetto_Fisica
         {
             double scale_x = (int)Utilities.maxValue(curve_map_x) + 2;
             double scale_y = (int)Utilities.maxValue(curve_map_y) + 2;
+            //Console.WriteLine(" scala asse x = " + scale_x + " ~~~~ scala asse y = " + scale_y);
             Graph.Series["Series_Set_Axis_Scale"].Points.Clear();
             Graph.Series["Series_Set_Axis_Scale"].Points.AddXY(scale_x, scale_y);
         }
@@ -111,7 +112,7 @@ namespace Progetto_Fisica
                 // increment arrays' index
                 index++;
             }
-            // now i have the point which brak the while (assuming index < limit array's size)
+            // now i have the point which break the while (assuming index < limit array's size)
             // re-calculate the value of last points accepted
             x -= increment;
             //x -= increment;

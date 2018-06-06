@@ -28,8 +28,9 @@ namespace Progetto_Fisica
         public double bullet_diameter;
         public double target_diameter;
         public double energy;
-        public double air_friction;
+        //public double air_friction;
         public bool   target_hit;
+        public double air_speed;
 
         public double target_start_position_x = 0;
         public double target_start_position_y = 10;
@@ -46,7 +47,7 @@ namespace Progetto_Fisica
             target_distance = target_start_position_x;
             target_height = target_start_position_y;
             speed = 30;
-            mass = 0;
+            mass = 10;
             max_height = 0;
             vi_x = 0;
             vi_y = 0;
@@ -56,6 +57,7 @@ namespace Progetto_Fisica
             target_diameter = 4;
             target_hit = false;
             energy = 0;
+            air_speed = 0;
         }
 
         // function for calculate y position of bullet
@@ -93,9 +95,9 @@ namespace Progetto_Fisica
             double bullet_top_y = Math.Round(y_bullet, number_of_decimal_digits) + (bullet_diameter/2);
             double bullet_bottom_y = Math.Round(y_bullet, number_of_decimal_digits) - (bullet_diameter/2);
             // check if bullet (which is under the target) hit target
-            Console.WriteLine(" --------------------------------------------------------------------- ");
-            Console.WriteLine("(proiettile) --- INF ==> " + bullet_bottom_y + "  ---  SUP ==> " + bullet_top_y + " --- ");
-            Console.WriteLine("(bersaglio)  --- INF ==> " + target_min_y    + "  ---  SUP ==> " + target_max_y + " --- ");
+            // Console.WriteLine(" --------------------------------------------------------------------- ");
+            // Console.WriteLine("(proiettile) --- INF ==> " + bullet_bottom_y + "  ---  SUP ==> " + bullet_top_y + " --- ");
+            // Console.WriteLine("(bersaglio)  --- INF ==> " + target_min_y    + "  ---  SUP ==> " + target_max_y + " --- ");
             if ((bullet_bottom_y < target_min_y) && (bullet_top_y >= target_min_y) )
             {
                 Console.WriteLine("bersaglio colpito da sotto");
@@ -127,21 +129,24 @@ namespace Progetto_Fisica
         public void calculateViX()
         {
             angle_radiants = Utilities.ToRadians(angle_degrees);
-            vi_x = speed * Math.Cos(angle_radiants);
+            //vi_x = speed * Math.Cos(angle_radiants);
+            // add air speed opposition
+            vi_x = speed * Math.Cos(angle_radiants) - air_speed * Math.Cos(angle_radiants);
         }
 
         // calculate vi_y
         public void calculateViY()
         {
             angle_radiants = Utilities.ToRadians(angle_degrees);
-            vi_y = speed * Math.Sin(angle_radiants);
+            //vi_y = speed * Math.Sin(angle_radiants);
+            // add air speed opposition
+            vi_y = speed * Math.Sin(angle_radiants) - air_speed * Math.Sin(angle_radiants);
         }
 
         // calculate final position
         public void calculateFinalPosition()
         {
             angle_radiants = Utilities.ToRadians(angle_degrees);
-            vi_x = speed * Math.Cos(angle_radiants);
             final_position = vi_x * time_flight;
         }
 
@@ -149,7 +154,6 @@ namespace Progetto_Fisica
         public void calculateMaxHeight()
         {
             angle_radiants = Utilities.ToRadians(angle_degrees);
-            vi_y = speed * Math.Sin(angle_radiants);
             max_height = (vi_y * time_rise) - (0.5 * Utilities.g_power_acceleration * Math.Pow(time_rise, 2));
         }
 
@@ -182,6 +186,17 @@ namespace Progetto_Fisica
             double y = Math.Round(bullet_trajectory_current_position_y(x), Utilities.number_round_decimal);
             // Show on console the position
             Console.WriteLine("Move target to : [" + x + ", " + y + "] ");
+        }
+
+        public void calculateEnergy()
+        {
+            energy = 0.5 * mass * Math.Pow(speed, 2);
+        }
+
+        public void CalculateAirSpeedComponent()
+        {
+           // what should i do?
+           // speed vs power !!
         }
     }
 }

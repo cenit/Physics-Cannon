@@ -62,12 +62,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.Input_Target_Diameter = new System.Windows.Forms.TextBox();
             this.Output_Target_Hit = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Input_Air_Speed = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Graph = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.Air_Friction = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Graph)).BeginInit();
             this.panel1.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             // Input_Angle
             // 
-            this.Input_Angle.Location = new System.Drawing.Point(382, 3);
+            this.Input_Angle.Location = new System.Drawing.Point(381, 3);
             this.Input_Angle.Name = "Input_Angle";
             this.Input_Angle.Size = new System.Drawing.Size(126, 31);
             this.Input_Angle.TabIndex = 0;
@@ -91,7 +91,7 @@
             // 
             // Input_Target_X
             // 
-            this.Input_Target_X.Location = new System.Drawing.Point(382, 145);
+            this.Input_Target_X.Location = new System.Drawing.Point(381, 145);
             this.Input_Target_X.Name = "Input_Target_X";
             this.Input_Target_X.Size = new System.Drawing.Size(126, 31);
             this.Input_Target_X.TabIndex = 9;
@@ -99,7 +99,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(965, 73);
+            this.label2.Location = new System.Drawing.Point(961, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(188, 25);
             this.label2.TabIndex = 10;
@@ -117,7 +117,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(965, 469);
+            this.label4.Location = new System.Drawing.Point(961, 469);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(247, 25);
             this.label4.TabIndex = 12;
@@ -134,7 +134,7 @@
             // 
             // Input_Target_Y
             // 
-            this.Input_Target_Y.Location = new System.Drawing.Point(382, 209);
+            this.Input_Target_Y.Location = new System.Drawing.Point(381, 209);
             this.Input_Target_Y.Name = "Input_Target_Y";
             this.Input_Target_Y.Size = new System.Drawing.Size(126, 31);
             this.Input_Target_Y.TabIndex = 14;
@@ -156,7 +156,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.4551F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.5449F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 478F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 489F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 493F));
             this.tableLayoutPanel1.Controls.Add(this.Output_Speed, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.Input_Bullet_Diameter, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.Output_Height, 3, 2);
@@ -184,7 +184,7 @@
             this.tableLayoutPanel1.Controls.Add(this.Output_Target_Hit, 3, 7);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.label13, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Air_Friction, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.Input_Air_Speed, 3, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(52, 933);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -209,7 +209,7 @@
             // Output_Speed
             // 
             this.Output_Speed.AutoSize = true;
-            this.Output_Speed.Location = new System.Drawing.Point(1443, 206);
+            this.Output_Speed.Location = new System.Drawing.Point(1439, 206);
             this.Output_Speed.Name = "Output_Speed";
             this.Output_Speed.Size = new System.Drawing.Size(33, 25);
             this.Output_Speed.TabIndex = 21;
@@ -218,7 +218,7 @@
             // Input_Bullet_Diameter
             // 
             this.Input_Bullet_Diameter.AutoSize = true;
-            this.Input_Bullet_Diameter.Location = new System.Drawing.Point(382, 469);
+            this.Input_Bullet_Diameter.Location = new System.Drawing.Point(381, 469);
             this.Input_Bullet_Diameter.Name = "Input_Bullet_Diameter";
             this.Input_Bullet_Diameter.Size = new System.Drawing.Size(33, 25);
             this.Input_Bullet_Diameter.TabIndex = 17;
@@ -227,7 +227,7 @@
             // Output_Height
             // 
             this.Output_Height.AutoSize = true;
-            this.Output_Height.Location = new System.Drawing.Point(1443, 142);
+            this.Output_Height.Location = new System.Drawing.Point(1439, 142);
             this.Output_Height.Name = "Output_Height";
             this.Output_Height.Size = new System.Drawing.Size(33, 25);
             this.Output_Height.TabIndex = 20;
@@ -236,7 +236,7 @@
             // Output_Energy
             // 
             this.Output_Energy.AutoSize = true;
-            this.Output_Energy.Location = new System.Drawing.Point(1443, 0);
+            this.Output_Energy.Location = new System.Drawing.Point(1439, 0);
             this.Output_Energy.Name = "Output_Energy";
             this.Output_Energy.Size = new System.Drawing.Size(33, 25);
             this.Output_Energy.TabIndex = 18;
@@ -245,7 +245,7 @@
             // Output_Distance
             // 
             this.Output_Distance.AutoSize = true;
-            this.Output_Distance.Location = new System.Drawing.Point(1443, 73);
+            this.Output_Distance.Location = new System.Drawing.Point(1439, 73);
             this.Output_Distance.Name = "Output_Distance";
             this.Output_Distance.Size = new System.Drawing.Size(33, 25);
             this.Output_Distance.TabIndex = 19;
@@ -263,7 +263,7 @@
             // Input_Time
             // 
             this.Input_Time.AutoSize = true;
-            this.Input_Time.Location = new System.Drawing.Point(382, 73);
+            this.Input_Time.Location = new System.Drawing.Point(381, 73);
             this.Input_Time.Name = "Input_Time";
             this.Input_Time.Size = new System.Drawing.Size(33, 25);
             this.Input_Time.TabIndex = 17;
@@ -272,7 +272,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(965, 0);
+            this.label11.Location = new System.Drawing.Point(961, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(170, 25);
             this.label11.TabIndex = 25;
@@ -298,14 +298,14 @@
             // 
             // Input_Speed
             // 
-            this.Input_Speed.Location = new System.Drawing.Point(382, 267);
+            this.Input_Speed.Location = new System.Drawing.Point(381, 267);
             this.Input_Speed.Name = "Input_Speed";
             this.Input_Speed.Size = new System.Drawing.Size(126, 31);
             this.Input_Speed.TabIndex = 23;
             // 
             // Input_Mass
             // 
-            this.Input_Mass.Location = new System.Drawing.Point(382, 333);
+            this.Input_Mass.Location = new System.Drawing.Point(381, 333);
             this.Input_Mass.Name = "Input_Mass";
             this.Input_Mass.Size = new System.Drawing.Size(126, 31);
             this.Input_Mass.TabIndex = 24;
@@ -313,7 +313,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(965, 142);
+            this.label7.Location = new System.Drawing.Point(961, 142);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(279, 25);
             this.label7.TabIndex = 16;
@@ -322,7 +322,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(965, 206);
+            this.label8.Location = new System.Drawing.Point(961, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 18;
@@ -339,7 +339,7 @@
             // 
             // Input_Target_Diameter
             // 
-            this.Input_Target_Diameter.Location = new System.Drawing.Point(382, 410);
+            this.Input_Target_Diameter.Location = new System.Drawing.Point(381, 410);
             this.Input_Target_Diameter.Name = "Input_Target_Diameter";
             this.Input_Target_Diameter.Size = new System.Drawing.Size(126, 31);
             this.Input_Target_Diameter.TabIndex = 31;
@@ -347,11 +347,27 @@
             // Output_Target_Hit
             // 
             this.Output_Target_Hit.AutoSize = true;
-            this.Output_Target_Hit.Location = new System.Drawing.Point(1443, 469);
+            this.Output_Target_Hit.Location = new System.Drawing.Point(1439, 469);
             this.Output_Target_Hit.Name = "Output_Target_Hit";
             this.Output_Target_Hit.Size = new System.Drawing.Size(43, 25);
             this.Output_Target_Hit.TabIndex = 34;
             this.Output_Target_Hit.Text = "NO";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(961, 264);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(271, 25);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Aria (componente Velocità)";
+            // 
+            // Input_Air_Speed
+            // 
+            this.Input_Air_Speed.Location = new System.Drawing.Point(1439, 267);
+            this.Input_Air_Speed.Name = "Input_Air_Speed";
+            this.Input_Air_Speed.Size = new System.Drawing.Size(138, 31);
+            this.Input_Air_Speed.TabIndex = 36;
             // 
             // button1
             // 
@@ -426,22 +442,6 @@
             this.panel1.Size = new System.Drawing.Size(1930, 771);
             this.panel1.TabIndex = 4;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(965, 264);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 25);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Attrito Aria";
-            // 
-            // Air_Friction
-            // 
-            this.Air_Friction.Location = new System.Drawing.Point(1443, 267);
-            this.Air_Friction.Name = "Air_Friction";
-            this.Air_Friction.Size = new System.Drawing.Size(138, 31);
-            this.Air_Friction.TabIndex = 36;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -497,7 +497,7 @@
         private System.Windows.Forms.Label Output_Height;
         private System.Windows.Forms.Label Output_Speed;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox Air_Friction;
+        private System.Windows.Forms.TextBox Input_Air_Speed;
     }
 }
 

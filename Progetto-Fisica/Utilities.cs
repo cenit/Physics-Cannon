@@ -15,7 +15,7 @@ namespace Progetto_Fisica
         ********************************************************************/
         // graph constant
         public static int   GRAPH_ELEMENTS_NUMBER = 500;
-        public static double GRAPH_CURVE_INCREMENT = 1;
+        public static double GRAPH_CURVE_INCREMENT = 5;
         // generic constant
         public static int     number_round_decimal = 2;
         public static double  air_friction_coefficient = (1.5 * 0.000005);
@@ -51,7 +51,7 @@ namespace Progetto_Fisica
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Eccezione Generata: " + ex.Message);
+                Console.WriteLine("Eccezione Generata (non è stato possibile contare il numero di decimali per l'input ["+ argument +"]): " + ex.Message);
             }
             return 0;
         }
